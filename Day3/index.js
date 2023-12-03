@@ -5,9 +5,8 @@ var data = fs.readFileSync('input3.txt', 'utf8').toString();
 var splitInput = data.split(/\r?\n|\r|\n/g);
 
 var partNumsSum = 0;
-var adjacentGearsDict = {
+var adjacentGearsDict = {}
 
-}
 for (var row = 0; row < splitInput.length; row++) {
   for (var col = 0; col < splitInput[row].length; col++) {
       var colIndex = col;
