@@ -1,4 +1,3 @@
-// run `node index.js` in the terminal
 var fs = require('fs');
 const { isNumeric } = require('./utils.js');
 
@@ -28,7 +27,6 @@ for (var row = 0; row < splitInput.length; row++) {
               if (!adjacentGears.includes(`${rowCheck},${colCheck}`)){
                 adjacentGears.push(`${rowCheck},${colCheck}`);
               }
-              console.log(`* at ${rowCheck} ${colCheck}`);
             }
             isPartNum = true;
           }
@@ -42,7 +40,6 @@ for (var row = 0; row < splitInput.length; row++) {
               if (!adjacentGears.includes(`${rowCheck},${colCheck}`)) {
                 adjacentGears.push(`${rowCheck},${colCheck}`);
               }
-              console.log(`* at ${rowCheck} ${colCheck}`);
             }
             isPartNum = true;
           }
@@ -56,7 +53,6 @@ for (var row = 0; row < splitInput.length; row++) {
               if (!adjacentGears.includes(`${rowCheck},${colCheck}`)){
                 adjacentGears.push(`${rowCheck},${colCheck}`);
               }
-              console.log(`* at ${rowCheck} ${colCheck}`);
             }
             isPartNum = true;
           }
@@ -70,7 +66,6 @@ for (var row = 0; row < splitInput.length; row++) {
               if (!adjacentGears.includes(`${rowCheck},${colCheck}`)){
                 adjacentGears.push(`${rowCheck},${colCheck}`);
               }
-              console.log(`* at ${rowCheck} ${colCheck}`);
             }
             isPartNum = true;
           }
@@ -84,7 +79,6 @@ for (var row = 0; row < splitInput.length; row++) {
               if (!adjacentGears.includes(`${rowCheck},${colCheck}`)){
                 adjacentGears.push(`${rowCheck},${colCheck}`);
               }
-              console.log(`* at ${rowCheck} ${colCheck}`);
             }
             isPartNum = true;
           }
@@ -98,7 +92,6 @@ for (var row = 0; row < splitInput.length; row++) {
               if (!adjacentGears.includes(`${rowCheck},${colCheck}`)){
                 adjacentGears.push(`${rowCheck},${colCheck}`);
               }
-              console.log(`* at ${rowCheck} ${colCheck}`);
             }
             isPartNum = true;
           }
@@ -112,7 +105,6 @@ for (var row = 0; row < splitInput.length; row++) {
               if (!adjacentGears.includes(`${rowCheck},${colCheck}`)){
                 adjacentGears.push(`${rowCheck},${colCheck}`);
               }
-              console.log(`* at ${rowCheck} ${colCheck}`);
             }
             isPartNum = true;
           }
@@ -126,7 +118,6 @@ for (var row = 0; row < splitInput.length; row++) {
               if (!adjacentGears.includes(`${rowCheck},${colCheck}`)){
                 adjacentGears.push(`${rowCheck},${colCheck}`);
               }
-              console.log(`* at ${rowCheck} ${colCheck}`);
             }
             isPartNum = true;
           }
@@ -152,7 +143,6 @@ for (var row = 0; row < splitInput.length; row++) {
   }
 }
 
-console.log(adjacentGearsDict)
 console.log(`sum: ${partNumsSum}`)
 
 // for (var i = 0; i < splitInput.length; i++) {
