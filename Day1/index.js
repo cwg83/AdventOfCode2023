@@ -1,4 +1,3 @@
-// run `node index.js` in the terminal
 const { isNumeric } = require('./utils.js');
 const { Trie } = require('./utils.js');
 
