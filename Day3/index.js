@@ -128,7 +128,6 @@ for (var row = 0; row < splitInput.length; row++) {
       }
       if (numString) {
         if (isPartNum) {
-          console.log('adjacentGears: ', adjacentGears)
           if (adjacentGears.length > 0) {
             if (!adjacentGearsDict[adjacentGears]) {
               adjacentGearsDict[adjacentGears] = [];
@@ -144,10 +143,6 @@ for (var row = 0; row < splitInput.length; row++) {
 }
 
 console.log(`sum: ${partNumsSum}`)
-
-// for (var i = 0; i < splitInput.length; i++) {
-//   console.log(splitInput[i])
-// }
 
 var gearRatioSum = 0;
 
