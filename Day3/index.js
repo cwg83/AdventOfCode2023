@@ -1,4 +1,3 @@
-// run `node index.js` in the terminal
 var fs = require('fs');
 const { isNumeric } = require('./utils.js');
 
@@ -6,9 +5,8 @@ var data = fs.readFileSync('input3.txt', 'utf8').toString();
 var splitInput = data.split(/\r?\n|\r|\n/g);
 
 var partNumsSum = 0;
-var adjacentGearsDict = {
+var adjacentGearsDict = {}
 
-}
 for (var row = 0; row < splitInput.length; row++) {
   for (var col = 0; col < splitInput[row].length; col++) {
       var colIndex = col;
@@ -28,7 +26,6 @@ for (var row = 0; row < splitInput.length; row++) {
               if (!adjacentGears.includes(`${rowCheck},${colCheck}`)){
                 adjacentGears.push(`${rowCheck},${colCheck}`);
               }
-              console.log(`* at ${rowCheck} ${colCheck}`);
             }
             isPartNum = true;
           }
@@ -42,7 +39,6 @@ for (var row = 0; row < splitInput.length; row++) {
               if (!adjacentGears.includes(`${rowCheck},${colCheck}`)) {
                 adjacentGears.push(`${rowCheck},${colCheck}`);
               }
-              console.log(`* at ${rowCheck} ${colCheck}`);
             }
             isPartNum = true;
           }
@@ -56,7 +52,6 @@ for (var row = 0; row < splitInput.length; row++) {
               if (!adjacentGears.includes(`${rowCheck},${colCheck}`)){
                 adjacentGears.push(`${rowCheck},${colCheck}`);
               }
-              console.log(`* at ${rowCheck} ${colCheck}`);
             }
             isPartNum = true;
           }
@@ -70,7 +65,6 @@ for (var row = 0; row < splitInput.length; row++) {
               if (!adjacentGears.includes(`${rowCheck},${colCheck}`)){
                 adjacentGears.push(`${rowCheck},${colCheck}`);
               }
-              console.log(`* at ${rowCheck} ${colCheck}`);
             }
             isPartNum = true;
           }
@@ -84,7 +78,6 @@ for (var row = 0; row < splitInput.length; row++) {
               if (!adjacentGears.includes(`${rowCheck},${colCheck}`)){
                 adjacentGears.push(`${rowCheck},${colCheck}`);
               }
-              console.log(`* at ${rowCheck} ${colCheck}`);
             }
             isPartNum = true;
           }
@@ -98,7 +91,6 @@ for (var row = 0; row < splitInput.length; row++) {
               if (!adjacentGears.includes(`${rowCheck},${colCheck}`)){
                 adjacentGears.push(`${rowCheck},${colCheck}`);
               }
-              console.log(`* at ${rowCheck} ${colCheck}`);
             }
             isPartNum = true;
           }
@@ -112,7 +104,6 @@ for (var row = 0; row < splitInput.length; row++) {
               if (!adjacentGears.includes(`${rowCheck},${colCheck}`)){
                 adjacentGears.push(`${rowCheck},${colCheck}`);
               }
-              console.log(`* at ${rowCheck} ${colCheck}`);
             }
             isPartNum = true;
           }
@@ -126,7 +117,6 @@ for (var row = 0; row < splitInput.length; row++) {
               if (!adjacentGears.includes(`${rowCheck},${colCheck}`)){
                 adjacentGears.push(`${rowCheck},${colCheck}`);
               }
-              console.log(`* at ${rowCheck} ${colCheck}`);
             }
             isPartNum = true;
           }
@@ -137,7 +127,6 @@ for (var row = 0; row < splitInput.length; row++) {
       }
       if (numString) {
         if (isPartNum) {
-          console.log('adjacentGears: ', adjacentGears)
           if (adjacentGears.length > 0) {
             if (!adjacentGearsDict[adjacentGears]) {
               adjacentGearsDict[adjacentGears] = [];
@@ -152,12 +141,7 @@ for (var row = 0; row < splitInput.length; row++) {
   }
 }
 
-console.log(adjacentGearsDict)
 console.log(`sum: ${partNumsSum}`)
-
-// for (var i = 0; i < splitInput.length; i++) {
-//   console.log(splitInput[i])
-// }
 
 var gearRatioSum = 0;
 
