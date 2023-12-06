@@ -25,4 +25,28 @@ for (var line of splitInput) {
    }
 }
 
-console.log(dict);
+var seeds = dict.seeds.map(seed => parseInt(seed));
+for (var mapKey of Object.keys(dict.maps)) {
+   var mapArrays = dict.maps[mapKey];
+   console.log(`${mapKey}:`)
+   for (var mapArray of mapArrays) {
+      var sourceRangeStart = parseInt(mapArray[1]);
+      var rangeLength = parseInt(mapArray[2]);
+      var sourceRangeStop = sourceRangeStart + rangeLength;
+      console.log(mapArray);
+      for (var i = 0; i < seeds.length; i++) {
+         var seed = seeds[i];
+         if (seed >= sourceRangeStart && seed <= sourceRangeStop) {
+
+            var difference = seed - sourceRangeStart;
+            var result = parseInt(mapArray[0]) + difference;
+            console.log(`${seed} is between ${sourceRangeStart} and ${sourceRangeStop} | difference: ${difference} | result: ${result}`);
+            seeds[i] = parseInt(result);
+            break;
+         }
+      }
+      console.log(mapKey.split('-')[2], seeds);
+   }
+}
+
+console.log(seeds);
