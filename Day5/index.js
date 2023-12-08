@@ -25,28 +25,31 @@ for (var line of splitInput) {
    }
 }
 
-var seeds = dict.seeds.map(seed => parseInt(seed));
-for (var mapKey of Object.keys(dict.maps)) {
-   var mapArrays = dict.maps[mapKey];
-   console.log(`${mapKey}:`)
-   for (var mapArray of mapArrays) {
-      var sourceRangeStart = parseInt(mapArray[1]);
-      var rangeLength = parseInt(mapArray[2]);
-      var sourceRangeStop = sourceRangeStart + rangeLength;
-      console.log(mapArray);
-      for (var i = 0; i < seeds.length; i++) {
-         var seed = seeds[i];
-         if (seed >= sourceRangeStart && seed <= sourceRangeStop) {
+// console.log(JSON.stringify(dict, undefined, 4))
 
-            var difference = seed - sourceRangeStart;
+var seeds = dict.seeds.map(seed => parseInt(seed));
+for (var i = 0; i < seeds.length; i++) {
+   for (var mapKey of Object.keys(dict.maps)) {
+      var mapArrays = dict.maps[mapKey];
+      for (var mapArray of mapArrays) {
+   
+         var sourceRangeStart = parseInt(mapArray[1]);
+         var rangeLength = parseInt(mapArray[2]);
+         var sourceRangeStop = sourceRangeStart + rangeLength - 1;
+   
+         if (seeds[i] >= sourceRangeStart && seeds[i] <= sourceRangeStop) {
+            console.log(`seed: ${seeds[i]} | mapKey: ${mapKey} | mapArray: ${mapArray}`);
+            console.log(`seed: ${seeds[i]} | sourceRangeStart: ${sourceRangeStart} sourceRangeStop: ${sourceRangeStop}`);
+            var difference = seeds[i] - sourceRangeStart;
             var result = parseInt(mapArray[0]) + difference;
-            console.log(`${seed} is between ${sourceRangeStart} and ${sourceRangeStop} | difference: ${difference} | result: ${result}`);
-            seeds[i] = parseInt(result);
+            console.log(`${seeds[i]} is in range ${sourceRangeStart} - ${sourceRangeStop} | difference: ${difference} | result: ${result}`);
+            seeds[i] = result;
             break;
          }
+
       }
-      console.log(mapKey.split('-')[2], seeds);
    }
 }
 
-console.log(seeds);
+
+console.log(seeds.sort());
