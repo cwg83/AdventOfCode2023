@@ -1,6 +1,6 @@
 var fs = require('fs');
 
-var data = fs.readFileSync('input1.txt', 'utf8').toString();
+var data = fs.readFileSync('input2.txt', 'utf8').toString();
 var splitInput = data.split(/\n\n/);
 
 // Part 1
@@ -51,5 +51,7 @@ for (var i = 0; i < seeds.length; i++) {
    }
 }
 
-
-console.log(seeds.sort());
+seeds.sort(function(a, b) {
+   return a - b;
+});
+console.log(seeds[0]);
