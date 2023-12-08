@@ -1,5 +1,5 @@
 var fs = require('fs');
-const { isNumeric } = require('./utils.js');
+const { isNumeric } = require('../utils.js');
 
 var data = fs.readFileSync('input3.txt', 'utf8').toString();
 var splitInput = data.split(/\r?\n|\r|\n/g);

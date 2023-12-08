@@ -1,5 +1,5 @@
-const { isNumeric } = require('./utils.js');
-const { Trie } = require('./utils.js');
+const { isNumeric } = require('../utils.js');
+const { Trie } = require('../utils.js');
 
 var fs = require('fs');
 
